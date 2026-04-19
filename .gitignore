@@ -6,7 +6,6 @@ test/*
 *.bak
 hashes/
 images0/
-images/
 venv/
 # Testing/old code
 phaser/similarities/_distances_test.py
