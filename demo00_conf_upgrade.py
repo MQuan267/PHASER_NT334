@@ -27,12 +27,10 @@ FIGSIZE = (5, 3)
 # ---------------------------------------------------------------------
 # Experimental configuration
 # ---------------------------------------------------------------------
-# Define which hashing algorithms to test
 from phaser.hashing import PHash, WaveHash, PdqHash
 
 ALGOS_dict = {"phash": PHash(hash_size=8), "wave": WaveHash(), "pdq": PdqHash()}
 
-# Define which transformations to apply — khớp với script_hash.py
 from phaser.transformers import Border, Crop, Flip, Rescale, Rotate, Watermark
 
 TRANS_list = [
@@ -44,8 +42,9 @@ TRANS_list = [
     Watermark(),
 ]
 
-# Define the distance metrics used for similarity scoring
+# Thêm Jaccard so với demo00_conf gốc
 METR_dict = {
     "Hamming": "hamming",
     "Cosine": "cosine",
+    "Jaccard": "jaccard",
 }

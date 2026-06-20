@@ -19,11 +19,11 @@ TRANS_list = [
 ]
 METR_dict  = {"Hamming": "hamming", "Cosine": "cosine"}
 
-ROOT_DIR   = r"D:\NT334.Q21.ANTT\PHASER-main\PHASER-main"
-OUTPUT_DIR = r"D:\NT334.Q21.ANTT\PHASER-main\PHASER-main\hashes"
+ROOT_DIR   = r"."
+OUTPUT_DIR = r".\output"
 pathlib.Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
 
-for file_id in range(1):  # ← test images0
+for file_id in range(8, 9):  # ← test images0
     base_name  = f"images{file_id}"
     images_dir = os.path.join(ROOT_DIR, base_name, "images")
 
@@ -31,7 +31,7 @@ for file_id in range(1):  # ← test images0
         print(f"[SKIP] {images_dir} không tồn tại")
         continue
 
-    folder_ids = list(range(10))
+    folder_ids = list(range(100))
     pbar = tqdm(folder_ids, desc=f"{base_name}", unit="folder")
 
     for folder_id in pbar:
